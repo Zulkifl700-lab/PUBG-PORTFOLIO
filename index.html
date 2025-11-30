@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG Mobile | Player Portfolio</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background FX -->
+    <div class="scanlines"></div>
+    <div class="bg-particles" id="bg-particles"></div>
+
+    <!-- PAGE 1: PLAYER PROFILE -->
+    <section id="player-page" class="page active">
+        <div class="container-3d">
+            <div class="card" id="card">
+                
+                <!-- Floating Country Badge -->
+                <div class="country-badge">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg" alt="PK">
+                    <span>PAKISTAN</span>
+                </div>
+
+                <div class="card-inner">
+                    <!-- Left: Character Image & Radar -->
+                    <div class="col-visual">
+                        <div class="radar-scan"></div> 
+                        
+                        <!-- 🛑 YOUR IMAGE HERE 🛑 -->
+                        <!-- Change src="images/myphoto.png" -->
+                        <img src="images/razil.jpg" 
+                             alt="PUBG Character" 
+                             class="character-3d" 
+                             id="char-img">
+                    </div>
+
+                    <!-- Right: Stats & Info -->
+                    <div class="col-info">
+                        <div class="rank-label">CONQUEROR SEASON C1S1</div>
+                        
+                        <!-- Glitch Text Effect -->
+                        <h1 class="glitch" data-text="RAZIL">RAZIL</h1>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <span class="lbl">K/D</span>
+                                <span class="val">5.24</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="lbl">LEVEL</span>
+                                <span class="val">76</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="lbl">MATCHES</span>
+                                <span class="val">4.2k</span>
+                            </div>
+                        </div>
+
+                        <!-- UID Section -->
+                        <div class="uid-box">
+                            <i class="fa-solid fa-id-card"></i>
+                            <span id="uid-text">51234567890</span>
+                            <button class="copy-btn" onclick="copyUID()"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+
+                        <!-- Navigation Button -->
+                        <div class="actions">
+                            <button class="btn-yellow" onclick="switchPage('game-page')">
+                                GAME INTEL <i class="fa-solid fa-crosshairs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 2: GAME INTEL (Maps/Guns/Cars) -->
+    <section id="game-page" class="page">
+        <button class="back-btn" onclick="switchPage('player-page')">
+            <i class="fa-solid fa-arrow-left"></i> BACK TO PROFILE
+        </button>
+
+        <div class="content-wrapper">
+            <h1 class="page-title">WARZONE <span class="highlight">DATA</span></h1>
+            
+            <div class="intel-grid">
+                <!-- Maps Card -->
+                <div class="intel-card" onclick="openGallery('maps')">
+                    <div class="icon-box"><i class="fa-solid fa-map"></i></div>
+                    <h2>MAPS</h2>
+                    <p>Erangel, Miramar, Sanhok</p>
+                    <span class="btn-small">VIEW MAPS</span>
+                </div>
+
+                <!-- Arsenal Card -->
+                <div class="intel-card" onclick="openGallery('arsenal')">
+                    <div class="icon-box"><i class="fa-solid fa-person-rifle"></i></div>
+                    <h2>ARSENAL</h2>
+                    <p>Assault Rifles, Snipers</p>
+                    <span class="btn-small">VIEW GUNS</span>
+                </div>
+
+                <!-- Vehicles Card -->
+                <div class="intel-card" onclick="openGallery('vehicles')">
+                    <div class="icon-box"><i class="fa-solid fa-car-side"></i></div>
+                    <h2>VEHICLES</h2>
+                    <p>UAZ, Dacia, Gliders</p>
+                    <span class="btn-small">VIEW CARS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPUP MODAL FOR IMAGES -->
+    <div id="gallery-modal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-modal" onclick="closeGallery()"><i class="fa-solid fa-xmark"></i></button>
+            <h2 id="modal-title">GALLERY</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Javascript will put images here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
